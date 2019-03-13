@@ -1,0 +1,25 @@
+.alert {
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+}
+
+.navbar-transparent {
+  margin-bottom: 0px;
+  background-color: white;
+   a {
+    color: #111 !important;
+  }
+
+  .navbar-brand {
+    height: 40px;
+    width: 150px;
+    padding: 0px;
+    margin-top: 5px;
+  }
+
+  img {
+    height: 40px;
+  }
+}
