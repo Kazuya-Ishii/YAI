@@ -14,7 +14,7 @@ h1,h3 {
 .top-hero-container {
   width: 100vw;
   height:  100vh;
-  background-image: image-url("pages.png");
+  background-image: image-url("image4.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -60,11 +60,16 @@ h1,h3 {
 
 .top-container{
   background-color: #EEEEEE;
-}
 
 .top-container-money{
   width: 600px;
   height: 300px;
-  text-align: left;
+  float: left;
   border: 0;
+}
+
+.right{
+  float: center;
+  color: blue;
+}
 }

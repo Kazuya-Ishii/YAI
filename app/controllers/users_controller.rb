@@ -7,7 +7,9 @@ class UsersController < ApplicationController
     #binding.pry
     @user = User.new(user_params)
       if @user.save
-        redirect_to root_path ,success: 'Welcome to YAI'
+        log_in @user
+        flash[:success] = "Welcome to YAI"
+        redirect_to topics_path
       else
         flash.now[:danger] = "Unable to sign up"
         render :new
