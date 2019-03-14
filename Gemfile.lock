@@ -88,7 +88,6 @@ GEM
     concurrent-ruby (1.1.4)
     crass (1.0.4)
     debug_inspector (0.0.3)
-    devise (4.6.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
@@ -142,7 +141,6 @@ GEM
     omniauth-oauth (1.1.0)
       oauth
       omniauth (~> 1.0)
-    omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
@@ -261,12 +259,10 @@ DEPENDENCIES
   carrierwave
   chromedriver-helper
   coffee-rails (~> 4.2)
-  devise
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4, < 0.6.0)
-  omniauth-twitter
   pry-byebug
   pry-doc
   pry-rails
