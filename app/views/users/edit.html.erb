@@ -1,9 +1,17 @@
-<div class="users-new-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-4 col-md-4 users-new-container">
-        <h1 class="text-center text-white">Sign up</h1>
+<% provide(:title, "Edit user") %>
+
+<div class="edit-wrapper">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Update your profile</h1>
         <%= form_for @user do |f| %>
+        <% if @user.image? %>
+          <%= image_tag @user.image.url %>
+        <% else %>
+          <%= image_tag("/images/no-image.png") %>
+        <% end %>
+        <%= f.file_field :image %>
+
         <div class="form-group">
           <%= f.label :name, class: 'text-white' %>
           <%= f.text_field :name, class: 'form-control' %>
@@ -42,10 +50,11 @@
           <%= f.text_area :remarks, class: 'form-control' %>
         </div>
 
-        <%= f.submit "Register Now", class: 'btn-white' %>
+
+
+        <%= f.submit "Update", class: 'btn-white' %>
       <% end %>
 
     </div>
   </div>
-</div>
-</div>
+  </div>
