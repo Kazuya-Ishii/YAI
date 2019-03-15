@@ -18,6 +18,23 @@ class TopicsController < ApplicationController
     end
   end
 
+  def edit
+    @topic = Topic.find_by(id:params[:id])
+  end
+
+  def update
+    @topic = Topic.find_by(id:params[:id])
+    @topic.description = params[:description]
+    @topic.save
+    redirect_to topics_path
+  end
+
+  def destroy
+    @topic = Topic.find_by(id:params[:id])
+    @topic.destroy
+    redirect_to topics_path
+  end
+
   private
   def topic_params
     params.require(:topic).permit(:image, :video, :description, :category)

@@ -1,0 +1,38 @@
+<div class="topic-new-wrapper" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+
+        <h1 class="text-center">Edit Picture</h1>
+        <%= form_for("/topic/#{@topic.id}/update") do %>
+
+          <div class="form-group">
+            <%= @topic.image %>
+            <%= f.label :image %>
+            <%= f.file_field :image%>
+          </div>
+
+          <div class="form-group">
+            <%= @topic.video %>
+            <%= f.label :video %>
+            <%= f.file_field :video, :accept => 'video/*' %>
+          </div>
+
+          <div class="form-group">
+            <%= @topic.category %>
+            <%= f.label :category %>
+            <%= f.select :category, [["Autos & Vehicles","Autos & Vehicles"],["Music","Music"],["Pets & Animals","Pets & Animals"],["Sports","Sports"],["Travel & Events","Travel & Events"],["Gaming","Gaming"],["Videoblogging","Videoblogging"],["People & Blogs","People & Blogs"],["Entertainment","Entertainment"],["News & Politics","News & Politics"],["Howto & Style","Howto & Style"],["Education","Education"],["Science & Technology","Science & Technology"],["Movies","Movies"],["Anime/Animation","Anime/Animation"],["Action/Adventure","Action/Adventure"],["Classics","Classics"],["Documentary","Documentary"],["Family","Family"],["others","others"]] ,class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= @topic.description %>
+            <%= f.label :description %>
+            <%= f.text_area :description, class: 'form-control' %>
+          </div>
+
+        <input type="submit" value="保存">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
