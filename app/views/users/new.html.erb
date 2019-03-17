@@ -13,24 +13,16 @@
           <%= f.text_field :email, class: 'form-control' %>
         </div>
         <div class="form-group">
-            <%= f.label :password, class: 'text-white' %>
-            <%= f.password_field :password, class: 'form-control' %>
-          </div>
-          <div class="form-group">
-            <%= f.label :password_confirmation, class: 'text-white' %>
-            <%= f.password_field :password_confirmation, class: 'form-control' %>
-          </div>
+          <%= f.label :password, class: 'text-white' %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, class: 'text-white' %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
         <div class="form-group">
           <%= f.label :birthday, class: 'text-white' %>
-          <%= raw sprintf(
-            f.date_select(
-              :birthday,
-              use_month_numbers: true,
-              start_year: 1930,
-              end_year: (Time.now.year),
-              default: Date.new(1989, 1, 1),
-              date_separator: '%s'),
-            '/ ', '/ ') %>
+          <%= raw sprintf( f.date_select( :birthday, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year), default: Date.new(1989, 1, 1), date_separator: '%s'), '/ ', '/ ') %>
         </div>
         <div class="formradio-group">
           <label><%= f.radio_button :gender, "male" %>male</label>
@@ -44,6 +36,7 @@
 
         <%= f.submit "Register Now", class: 'btn-white' %>
       <% end %>
+      <%= link_to 'Click here for membership!', login_path ,class: 'text-white' %>
 
     </div>
   </div>

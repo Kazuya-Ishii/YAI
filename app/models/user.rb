@@ -7,4 +7,6 @@ class User < ApplicationRecord
   validates :password, presence: true, allow_nil:true
 
   has_many :topics
+
+  mount_uploader :image, ImageUploader
 end

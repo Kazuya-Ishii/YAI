@@ -22,30 +22,29 @@
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
         <li>
-          <%= link_to "My Profile" , user_path(current_user) %>
+          <%= link_to "Find" , topics_path %>
         </li>
           <li id="fat-menu" class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
               Menu
               <b class="caret"></b>
               <ul class="dropdown-menu">
-                <li><%= link_to "category","#" %></li>
-                <li><%= link_to "my page",user_path(current_user) %></li>
-                <li><%= link_to "post", new_topic_path %></li>
-                <li><%= link_to "find", topics_path %></li>
+                <li><%= link_to "Category","#" %></li>
+                <li><%= link_to "My Profile",user_path(current_user) %></li>
+                <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
+                <li><%= link_to "New Post", new_topic_path %></li>
+                <li><%= link_to "Find", topics_path %></li>
               </ul>
             <li>
               <%= link_to "Log out", logout_path, method: :delete %>
             </li>
           <% else %>
-            <li id="fat-menu" class="dropdown">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                Sign In
-                <b class="caret"></b>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "my account",login_path %></li>
-                  <li><%= link_to "sign up",new_user_path %></li>
-                </ul>
+                  <li>
+                    <%= link_to "Sign in",login_path %>
+                  </li>
+                  <li>
+                    <%= link_to "sign up",new_user_path %>
+                  </li>
               <% end %>
           </ul>
         </div>

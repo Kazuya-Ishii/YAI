@@ -46,11 +46,57 @@
   }
 }
 
-.user_info{
-  padding-top: 60px;
-}
 
 .edit-wrapper{
   padding: 60px;
   color: #000;
+  background-color: #EEEEEE;
+
+  img{
+    border-radius: 50%;
+   width:  180px;
+   height: 180px;
+  }
+}
+
+.show-wrapper{
+  height: 100vh;
+  background-color: #EEEEEE;
+  padding-top: 60px;
+}
+
+.show-profile{
+  max-width: 50%;
+  margin: 0 auto;
+  width:auto;
+  height:auto;
+  font-size: 30px;
+  margin-top:50px;
+
+  img{
+    border-radius: 50%;
+   width:  180px;
+   height: 180px;
+  }
+
+  .show-name{
+    font-size: 45px;
+    font-weight: 600;
+  }
+
+  .show-birthday{
+    font-size: 20px;
+    margin-bottom: 55px;
+  }
+  .show-bio{
+    padding: 8px 19px;
+    margin: 2em 0;
+    color: #2c2c2f;
+    border-top: solid 1.5px #5989cf;
+    border-bottom: solid 1.5px #5989cf;
+  }
+  .show-bio p{
+    margin: 0;
+    padding: 0;
+  }
 }
