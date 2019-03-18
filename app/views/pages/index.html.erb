@@ -5,16 +5,27 @@
     <%= link_to 'Sign up', new_user_path , class: 'btn-circle' %>
   </div>
   <div class="hero-container">
-    <h1 class="text-white">You Are an Influencer!</h1>
+    <h1 class="text-white">
+    <%= image_tag "star-right.jpg", class: "star" %>
+    You Are an Influencer!
+    <%= image_tag "star-left.jpg", class: "star" %>
+    </h1>
   </div>
-  <div class="top-container">
-    <div class="left">
-    <%= image_tag "money.png", class: "top-container-money" %>
+  <div class="pages-middle">
+    <div class="pages-middle-up">
+      <h1>FULLY EXHIBIT YOUR STRENGTH</h1>
+      <h2></h2>
     </div>
-    <div class="right">
-    <h1 class="text-blue">SELL YOUR SKILLS.</h1>
-    <h2 class="text-right">Our app helps you find people who are interested your skills.
-      Show your skills, get your fans, and be Influencer in the world.</h2>
+    <div class="pages-middle-up-right"></div>
+    <div class="pages-middle-down-left"></div>
+    <div class="pages-middle-down">
+      <h1>FIND AN BUSINESS PARTNER</h1>
     </div>
   </div>
+  <div class="pages-last">
+    <h1 class="text-pages">JOIN THE COMMUNITY</h1>
+    <h3 class="text-pages"></h3>
+    <%= link_to 'Sign up', new_user_path , class: 'btn-circle' %>
+  </div>
+
 </div>

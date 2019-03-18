@@ -1,5 +1,8 @@
 <div class="topic-index-wrapper">
   <div class="container">
+    <%= link_to new_topic_path do %>
+    <span><%= image_tag "tweet.jpg", class: "tweet-icon" %></span>
+    <% end %>
     <% @topics.each do |topic| %>
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -17,8 +20,6 @@
             <p class="topic-text">
               <%= topic.description %>
             </p>
-          
-
           </div>
         </div>
       </div>

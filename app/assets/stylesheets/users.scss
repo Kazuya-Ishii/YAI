@@ -60,7 +60,7 @@
 }
 
 .show-wrapper{
-  height: 100vh;
+  height: auto;
   background-color: #EEEEEE;
   padding-top: 60px;
 }
@@ -98,5 +98,19 @@
   .show-bio p{
     margin: 0;
     padding: 0;
+  }
+}
+
+.show-topics{
+  img{
+    width: 200px;
+    height: 200px;
+  }
+  video{
+    width: 200px;
+    height: 200px;
+  }
+  .topic-text{
+    padding-bottom: 50px;
   }
 }
