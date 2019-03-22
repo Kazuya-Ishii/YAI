@@ -7,7 +7,7 @@
             <% if @user.image? %>
               <%= image_tag @user.image.url %>
             <% else %>
-              <%= image_tag("/images/no-image.png") %>
+                <%= image_tag "no-image.png" %>
             <% end %>
 
           <section class="stats">
@@ -18,7 +18,7 @@
         </div>
         <div class="show-profile2">
           <div class="show-name">
-            <p>Hi, I am<%= @user.name %>!</p>
+            <%= @user.name %>
           </div>
           <div class="show-birthday">
             <p>(<%= @user.birthday %>)</p>

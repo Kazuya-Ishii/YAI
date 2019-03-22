@@ -10,4 +10,8 @@ class Topic < ApplicationRecord
   mount_uploader :image, ImageUploader
   mount_uploader :video, VideoUploader
 
+  def self.getCategoryItems(category)
+    return Topic.find_by(category: category)
+  end
+
 end

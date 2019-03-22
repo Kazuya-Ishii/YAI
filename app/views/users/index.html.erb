@@ -1,0 +1,18 @@
+<div class="users-index-wrapper">
+  <div class="container">
+      <h1>ALL USERS</h1>
+      <% @users.each do |user| %>
+        <div class="row">
+          <div class="users-index-all">
+            <% if user.image? %>
+              <%= image_tag user.image.url, class: "tweet-icon" %>
+            <% else %>
+              <%= image_tag "no-image.png", class: "tweet-icon" %>
+            <% end %>
+
+            <%= link_to(user.name, "/users/#{user.id}") %>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
