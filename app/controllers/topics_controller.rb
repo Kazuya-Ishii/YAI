@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   def new
     @topic = Topic.new
   end
+
 #binding.pry
   def create
     @topic = current_user.topics.new(topic_params)
@@ -16,6 +17,10 @@ class TopicsController < ApplicationController
       flash.now[:danger]
       render :new
     end
+  end
+
+  def show
+    @topic = Topic.find(params[:id])
   end
 
   def edit
@@ -37,6 +42,6 @@ class TopicsController < ApplicationController
 
   private
   def topic_params
-    params.require(:topic).permit(:image, :video, :description, :category)
+    params.require(:topic).permit(:image, :video, :description, :category, :title)
   end
 end

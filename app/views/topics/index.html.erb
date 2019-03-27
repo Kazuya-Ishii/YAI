@@ -1,32 +1,38 @@
 <div class="topic-index-wrapper">
   <div class="container">
+    <h1 class="topic-h1">FIND YOUR BUSINESS PARTNER</h1>
     <div class="topic-index-container">
     <% @topics.each do |topic| %>
       <div class="row">
           <div class="topic-index-single">
+            <div class="topic-index-icons">
             <% if topic.image.present? %>
-            <%= image_tag topic.image.url %>
+            <%= link_to image_tag topic.image.url, topic_path %>
             <% end %>
             <% if topic.video.present? %>
             <%= video_tag topic.video.url, controls: true %>
             <% end %>
-
             <% if !topic.favorite_users.include?(current_user) %>
                <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
                 <%= image_tag 'heart-black.png', class: 'topic-index-icon' %>
                <% end %>
              <% else %>
-               <%= link_to favorites_destroy_path(topic_id: topic.id), method: :delete do %>
-                 <%= image_tag 'heart015.png', class: 'topic-index-icon' %>
+               <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
+                 <%= image_tag 'heart001.png', class: 'topic-index-icon' %>
                <% end %>
              <% end %>
 
+             </div>
+
             <h2 class="topic-author">
               <%= link_to(topic.user.name, user_path(topic.user.id))  %>
-              <span class="index-category"><%= topic.category %></span>
+              <span class="index-category">(<%= topic.category %>)</span>
             </h2>
+            <div class="topic-index-title">
+              <%= topic.title %>
+            </div>
             <p class="topic-text">
-              <%= topic.description %>
+              <%= topic.description.truncate(40) %>
             </p>
           </div>
       </div>

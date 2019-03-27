@@ -32,22 +32,33 @@
         </div>
       </h1>
 
-      <div class="show-topics">
-      <% @user.topics.each do |topic| %>
-        <div class="row">
-            <div class="topic-index-single">
-              <% if topic.image.present? %>
-              <%= image_tag topic.image.url %>
-              <% end %>
-              <% if topic.video.present? %>
-              <%= video_tag topic.video.url, controls: true %>
-              <% end %>
-              <p class="topic-text">
-                <%= topic.description %>
-              </p>
+      <div class="topic-index-wrapper">
+        <div class="container">
+          <h1 class="topic-h1">ALL MY POSTS</h1>
+          <div class="topic-index-container">
+          <% @user.topics.each do |topic| %>
+            <div class="row">
+                <div class="topic-index-single">
+                  <div class="topic-index-icons">
+                  <% if topic.image.present? %>
+                  <%= image_tag topic.image.url %>
+                  <% end %>
+                  <% if topic.video.present? %>
+                  <%= video_tag topic.video.url, controls: true %>
+                  <% end %>
+                   </div>
+                  <h2 class="topic-author">
+                    <span class="index-category"><%= topic.category %></span>
+                  </h2>
+                  <p class="topic-text">
+                    <%= topic.description %>
+                  </p>
+                </div>
             </div>
+          <% end %>
         </div>
-      <% end %>
+        </div>
       </div>
+
     </div>
   </div>

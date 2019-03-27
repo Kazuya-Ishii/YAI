@@ -30,14 +30,22 @@
     padding-bottom: 20px;
     margin-top: 30px;
 
+    .topic-index-icon{
+      width: 30px;
+      height: 30px;
+    }
+
     .topic-author {
-      font-size: 25px;
+      font-size: 15px;
       padding-right: 20px;
       padding-left: 20px;
     }
     .index-category{
       float: right;
       font-size: 20px;
+    }
+    .topic-index-title{
+      font-size: 30px;
     }
     .topic-text {
       padding-right: 20px;
@@ -53,6 +61,29 @@
     }
   }
 }
+
+.topic-h1{
+  font-size: 30px;
+  color: #FFF;
+  text-shadow: 2px 2px 1px #0FF,
+  -2px 2px 1px #0FF,
+  2px -2px 1px #0FF,
+  -2px -2px 1px #0FF;
+  font-weight: 400;
+  font-family: Verdana;
+  font-style: oblique;
+}
+
+.topic-index-icons{
+  position: relative;
+}
+
+.topic-index-icon{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
 
 .tweet-icon{
   width: 50px;
