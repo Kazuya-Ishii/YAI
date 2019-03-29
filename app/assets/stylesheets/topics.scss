@@ -15,22 +15,21 @@
   padding-top: 120px;
 }
 
-.topic-index-container{
+.topic-index-container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
-
 
 .topic-index-wrapper {
   padding-top: 70px;
 
   .topic-index-single {
+    margin: 40px;
     width: 330px;
     padding-bottom: 20px;
     margin-top: 30px;
 
-    .topic-index-icon{
+    .topic-index-icon {
       width: 30px;
       height: 30px;
     }
@@ -38,59 +37,95 @@
     .topic-author {
       font-size: 15px;
       padding-right: 20px;
-      padding-left: 20px;
     }
-    .index-category{
+
+    .index-category {
       float: right;
       font-size: 20px;
     }
-    .topic-index-title{
+
+    .topic-index-title {
       font-size: 30px;
     }
+
     .topic-text {
       padding-right: 20px;
       padding-left: 20px;
     }
+
     img {
       width: 100%;
       height: 230px;
     }
-    video{
+
+    video {
       width: 100%;
       height: 230px;
     }
   }
 }
 
-.topic-h1{
+.topic-h1 {
   font-size: 30px;
   color: #FFF;
-  text-shadow: 2px 2px 1px #0FF,
-  -2px 2px 1px #0FF,
-  2px -2px 1px #0FF,
-  -2px -2px 1px #0FF;
+  text-shadow: 2px 2px 1px #0FF, -2px 2px 1px #0FF, 2px -2px 1px #0FF, -2px -2px 1px #0FF;
   font-weight: 400;
   font-family: Verdana;
   font-style: oblique;
 }
 
-.topic-index-icons{
+.topic-index-icons {
   position: relative;
 }
 
-.topic-index-icon{
+.topic-index-icon {
   position: absolute;
   top: 5%;
   right: 5%;
 }
 
-
-.tweet-icon{
+.tweet-icon {
   width: 50px;
   height: 50px;
   position: relative;
-  bottom: 0px;
-  right: 0px;
+  bottom: 0;
+  right: 0;
   background-attachment: scroll;
+}
 
+.topic-show-wrapper {
+  padding-top: 100px;
+}
+
+.topic-show-image {
+  img {
+    width: 400px;
+    height: 500px;
+  }
+
+  video {
+    width: 400px;
+    height: 500px;
+  }
+}
+
+.topic-show-right {
+  img {
+    width: 35px;
+    height: 35px;
+  }
+  .topic-show-category {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  .topic-show-author {
+    font-size:20px;
+  }
+  .topic-show-title {
+    font-size: 60px;
+  }
+
+  .topic-show-text {
+    font-size: 25px;
+  }
 }

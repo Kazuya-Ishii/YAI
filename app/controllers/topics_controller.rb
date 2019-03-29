@@ -40,6 +40,8 @@ class TopicsController < ApplicationController
     redirect_to topics_path
   end
 
+
+
   private
   def topic_params
     params.require(:topic).permit(:image, :video, :description, :category, :title)

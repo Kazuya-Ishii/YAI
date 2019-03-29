@@ -50,7 +50,6 @@
 .edit-wrapper{
   padding: 60px;
   color: #000;
-  background-color: #EEEEEE;
 
   img{
     border-radius: 50%;
@@ -61,7 +60,6 @@
 
 .show-wrapper{
   height: auto;
-  background-color: #EEEEEE;
   padding-top: 60px;
 }
 
@@ -133,20 +131,9 @@
   }
 }
 
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-  a {
-    padding: 0;
-  }
-}
 
 .users-index-wrapper{
   height: auto;
-  background-color: #EEEEEE;
   padding-top: 60px;
 
   h1{

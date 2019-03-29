@@ -1,0 +1,11 @@
+<div id="favorite-link-<%= topic.id %>">
+  <% if !topic.favorite_users.include?(current_user) %>
+    <%= link_to favorites_path(topic_id: topic.id), method: :post, remote: true do %>
+      <%= image_tag 'heart-black.png', class: 'topic-index-icon' %>
+    <% end %>
+  <% else %>
+    <%= link_to favorites_path(topic_id: topic.id), method: :delete, remote: true do %>
+      <%= image_tag 'heart001.png', class: 'topic-index-icon' %>
+    <% end %>
+  <% end %>
+</div>

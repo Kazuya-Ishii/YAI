@@ -1,0 +1,8 @@
+  <div class="users-index-all">
+    <% if user.image? %>
+      <%= image_tag user.image.url, class: "tweet-icon" %>
+    <% else %>
+      <%= image_tag "no-image.png", class: "tweet-icon" %>
+    <% end %>
+    <%= link_to user.name, user %>
+</div>
