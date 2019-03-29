@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   get 'sessions/new'
   root 'pages#index'
   get 'pages/help'
@@ -14,7 +15,9 @@ Rails.application.routes.draw do
     end
 
   resources :relationships,   only: [:create, :destroy]
-  resources :topics
+  resources :topics do
+    resources :comments
+  end
 
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'

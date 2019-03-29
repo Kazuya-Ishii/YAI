@@ -99,8 +99,10 @@
 
 .topic-show-image {
   img {
+    position: fixed;
     width: 400px;
     height: 500px;
+
   }
 
   video {
@@ -110,6 +112,9 @@
 }
 
 .topic-show-right {
+  .topic-index-icon2{
+    float: right;
+  }
   img {
     width: 35px;
     height: 35px;
@@ -126,6 +131,54 @@
   }
 
   .topic-show-text {
+      padding-top: 60px;
     font-size: 25px;
   }
+}
+
+
+.balloon5 {
+  width: 100%;
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+
+.balloon5 .faceicon {
+  float: left;
+  margin-right: -90px;
+  width: 80px;
+}
+
+.balloon5 .faceicon img{
+  border-radius: 50%;
+ width:  55px;
+ height: 55px;
+}
+
+.balloon5 .chatting {
+  width: 100%;
+}
+
+.says {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 70px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #d7ebfe;
+}
+
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #d7ebfe;
+}
+
+.says p {
+  margin: 0;
+  padding: 0;
 }

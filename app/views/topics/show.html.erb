@@ -11,19 +11,19 @@
       </div>
 
       <div class="col-md-7 topic-show-right">
-        <div class="topic-show-title">
-          <%= @topic.title %>
-        </div>
         <div id="favorite-link-<%= @topic.id %>">
           <% if @topic.favorite_users.include?(current_user) %>
             <%= link_to favorites_path(topic_id: @topic.id), method: :delete, remote: true do %>
-              <%= image_tag 'heart001.png', class: 'topic-index-icon' %>
+              <%= image_tag 'heart001.png', class: 'topic-index-icon2' %>
             <% end %>
           <% else %>
             <%= link_to favorites_path(topic_id: @topic.id), method: :post, remote: true do %>
-              <%= image_tag 'heart-black.png', class: 'topic-index-icon' %>
+              <%= image_tag 'heart-black.png', class: 'topic-index-icon2' %>
             <% end %>
           <% end %>
+        </div>
+        <div class="topic-show-title">
+          <%= @topic.title %>
         </div>
         <div class="topic-show-author">
           <%= image_tag "人物アイコン.png" %>
@@ -34,8 +34,36 @@
           <%= @topic.category %>
         </div>
         <p class="topic-show-text">
+          <%= image_tag "presen1.png" %>
           <%= @topic.description %>
         </p>
+        <div class="topic-show-review">
+          <%= link_to new_topic_comment_path(topic_id: @topic.id), method: :get do %>
+          <%= image_tag 'コメント2.png' %>
+           <% end %>
+           <span>Comments</span>
+          <% @topic.comments.each do |comment| %>
+          <div class="balloon5">
+            <div class="faceicon">
+            <% if comment.user.image? %>
+              <%= image_tag comment.user.image.url, class: "tweet-icon" %>
+            <% else %>
+              <%= image_tag "no-image.png", class: "tweet-icon" %>
+            <% end %>
+            </div>
+            <div class="chatting">
+            <div class="says">
+            <%= comment.content %>
+              (from <%= comment.user.name %>)
+            </div>
+            </div>
+          </div>
+          <div>
+
+          </div>
+
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

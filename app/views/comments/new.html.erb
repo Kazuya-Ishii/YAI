@@ -1,0 +1,17 @@
+<div class="topic-new-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="topic-h1">Add Comment</h1>
+        <%= form_with model: [@topic, @comment], url: {action: "create"} do |f| %>
+        <div class="form-group">
+          <%= f.label :comment %>
+          <%= f.text_area :content, class: 'form-control' %>
+        </div>
+
+        <%= f.submit 'Submit', class: 'btn btn-black btn-block' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
