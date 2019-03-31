@@ -93,16 +93,28 @@
   background-attachment: scroll;
 }
 
+.topic-newpost {
+  position: fixed;
+  margin: 40px;
+  width: 50px;
+  height: 50px;
+  border: solid 1px #000;
+  border-radius: 50%;
+}
+
 .topic-show-wrapper {
   padding-top: 100px;
 }
 
-.topic-show-image {
-  img {
-    position: fixed;
-    width: 400px;
-    height: 500px;
 
+.topic-show-image {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+  img {
+    width: 400px;
+    height: 550px;
   }
 
   video {
@@ -112,30 +124,66 @@
 }
 
 .topic-show-right {
-  .topic-index-icon2{
+  .topic-index-icon2 {
     float: right;
   }
+
   img {
     width: 35px;
     height: 35px;
   }
+
   .topic-show-category {
     font-size: 20px;
     padding-top: 20px;
+    padding-bottom: 40px;
   }
+
   .topic-show-author {
-    font-size:20px;
+    font-size: 20px;
   }
+
   .topic-show-title {
-    font-size: 60px;
+    font-size: 50px;
+    padding-bottom: 30px;
   }
 
   .topic-show-text {
-      padding-top: 60px;
-    font-size: 25px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 20px;
+
+    .topic-show-text2 {
+      font-size: 25px;
+      font-weight: 400;
+      padding-bottom: 20px;
+    }
   }
 }
 
+.topic-show-left2{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px
+}
+
+.topic-show-review {
+  padding-top: 50px;
+  padding-bottom: 20px;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  .topic-show-comment {
+    font-size: 40px;
+    font-weight: 350;
+  }
+}
+
+.topic-show-right2{
+  padding-top: 45px;
+}
 
 .balloon5 {
   width: 100%;
@@ -149,10 +197,10 @@
   width: 80px;
 }
 
-.balloon5 .faceicon img{
+.balloon5 .faceicon img {
   border-radius: 50%;
- width:  55px;
- height: 55px;
+  width: 55px;
+  height: 55px;
 }
 
 .balloon5 .chatting {
@@ -172,7 +220,7 @@
   content: "";
   display: inline-block;
   position: absolute;
-  top: 18px;
+  top: 7px;
   left: -24px;
   border: 12px solid transparent;
   border-right: 12px solid #d7ebfe;
@@ -181,4 +229,24 @@
 .says p {
   margin: 0;
   padding: 0;
+}
+
+.comment-users {
+  padding-left: 80px;
+}
+
+.btn-flat-border {
+  font-size: 25px;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-flat-border:hover {
+  background: #67c5ff;
+  color: white;
 }

@@ -27,9 +27,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(create_params)
 
       if @comment.save
-        redirect_to topic_path(id: topic.id), success: 'Paradiseなコメントだね！'
+        redirect_to topic_path(params[:topic_id]), success: 'Comment was successfully.'
       else
-        redirect_to new_topic_comment_path, danger: 'このコメントには、Paradiseが足りないないぞ！'
+        redirect_to new_topic_comment_path, danger: 'Comment was not successfully.'
       end
   end
 

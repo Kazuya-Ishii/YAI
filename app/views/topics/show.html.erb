@@ -1,6 +1,7 @@
 <div class="topic-show-wrapper">
   <div class="container">
     <div class="row">
+
       <div class="col-md-5 topic-show-image">
         <% if @topic.image.present? %>
           <%= image_tag @topic.image.url %>
@@ -23,7 +24,7 @@
           <% end %>
         </div>
         <div class="topic-show-title">
-          <%= @topic.title %>
+          <%=  @topic.title %>
         </div>
         <div class="topic-show-author">
           <%= image_tag "人物アイコン.png" %>
@@ -33,38 +34,56 @@
           <%= image_tag "category.png" %>
           <%= @topic.category %>
         </div>
-        <p class="topic-show-text">
-          <%= image_tag "presen1.png" %>
-          <%= @topic.description %>
-        </p>
-        <div class="topic-show-review">
-          <%= link_to new_topic_comment_path(topic_id: @topic.id), method: :get do %>
-          <%= image_tag 'コメント2.png' %>
-           <% end %>
-           <span>Comments</span>
-          <% @topic.comments.each do |comment| %>
-          <div class="balloon5">
-            <div class="faceicon">
-            <% if comment.user.image? %>
-              <%= image_tag comment.user.image.url, class: "tweet-icon" %>
-            <% else %>
-              <%= image_tag "no-image.png", class: "tweet-icon" %>
-            <% end %>
-            </div>
-            <div class="chatting">
-            <div class="says">
-            <%= comment.content %>
-              (from <%= comment.user.name %>)
-            </div>
-            </div>
-          </div>
-          <div>
-
-          </div>
-
-          <% end %>
+        <hr color="silver">
+        <div class="topic-show-text">
+          <div class="topic-show-text2">
+            <%= image_tag "presen1.png" %>What we’ll do</div>
+            &nbsp;&nbsp;<%= @topic.description %>
         </div>
       </div>
     </div>
   </div>
+
+  <hr width="80%" color="silver">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 topic-show-left2">
+        <div class="topic-show-review">
+          <%= image_tag 'コメント2.png' %>
+          <span class="topic-show-comment">Comments</span>
+        </div>
+        <%= link_to 'Add Comments', new_topic_comment_path(topic_id: @topic.id) , class: 'btn-flat-border' %>
+      </div>
+
+      <div class="col-md-7 topic-show-right2">
+        <% @topic.comments.each do |comment| %>
+        <div class="balloon5">
+          <div class="faceicon">
+            <% if comment.user.image? %>
+              <%= link_to user_path(comment.user.id) do %>
+                <%= image_tag comment.user.image.url, class: "tweet-icon" %>
+              <% end %>
+            <% else %>
+              <%= link_to user_path(comment.user.id) do %>
+                <%= image_tag "no-image.png", class: "tweet-icon" %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="comment-users">
+            <%= link_to(comment.user.name, user_path(comment.user.id)) %>
+          </div>
+          <div class="chatting">
+            <div class="says">
+              <%= comment.content %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <hr width="80%" color="silver">
+
 </div>

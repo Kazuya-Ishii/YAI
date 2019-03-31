@@ -1,4 +1,7 @@
 <div class="topic-index-wrapper">
+  <%= link_to new_topic_path do %>
+    <%= image_tag '羽.png', class: 'topic-newpost' %>
+  <% end %>
   <div class="container">
     <h1 class="topic-h1">FIND YOUR BUSINESS PARTNER</h1>
     <div class="topic-index-container">
@@ -31,8 +34,8 @@
 
           <h2 class="topic-author">
             <%= link_to(topic.user.name, user_path(topic.user.id)) %>
-            <span class="index-category">(
-              <%= topic.category %>)</span>
+            <span class="index-category">
+              (<%= topic.category %>)</span>
           </h2>
           <div class="topic-index-title">
             <%= topic.title %>
