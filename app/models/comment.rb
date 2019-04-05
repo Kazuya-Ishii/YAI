@@ -3,4 +3,7 @@ class Comment < ApplicationRecord
 
   belongs_to :user
   belongs_to :topic
+
+  mount_uploader :image, ImageUploader
+  mount_uploader :video, VideoUploader
 end

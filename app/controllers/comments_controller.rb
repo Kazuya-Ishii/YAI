@@ -65,6 +65,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def create_params
-      params.require(:comment).permit(:content).merge(user_id: current_user.id, topic_id: params[:topic_id])
+      params.require(:comment).permit(:content,:image, :video).merge(user_id: current_user.id, topic_id: params[:topic_id])
     end
 end

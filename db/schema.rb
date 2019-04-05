@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2019_03_29_064547) do
     t.integer "user_id"
     t.integer "topic_id"
     t.text "content"
+    t.string "image"
+    t.string "video"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

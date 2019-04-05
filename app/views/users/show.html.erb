@@ -5,7 +5,9 @@
       <div class="show-profile">
         <div class="image-show">
           <% if @user.image? %>
+          <%= link_to @user.image.url do %>
             <%= image_tag @user.image.url %>
+          <% end %>
           <% else %>
             <%= image_tag "no-image.png" %>
           <% end %>
@@ -61,6 +63,12 @@
               <p class="topic-text">
                 <%= topic.description.truncate(40) %>
               </p>
+              <li>
+                  <%= link_to "edit",  edit_topic_path(topic) %>
+                </li>
+                <li>
+                  <%= link_to "delete", topic_path(topic), :method => :delete %>
+                </li>
             </div>
           </div>
           <% end %>

@@ -4,23 +4,25 @@
 
       <div class="col-md-5 topic-show-image">
         <% if @topic.image.present? %>
-          <%= image_tag @topic.image.url %>
+        <%= link_to @topic.image.url do %>
+        <%= image_tag @topic.image.url %>
+        <% end %>
         <% end %>
         <% if @topic.video.present? %>
-          <%= video_tag @topic.video.url, controls: true %>
+        <%= video_tag @topic.video.url, controls: true %>
         <% end %>
       </div>
 
       <div class="col-md-7 topic-show-right">
         <div id="favorite-link-<%= @topic.id %>">
           <% if @topic.favorite_users.include?(current_user) %>
-            <%= link_to favorites_path(topic_id: @topic.id), method: :delete, remote: true do %>
-              <%= image_tag 'heart001.png', class: 'topic-index-icon2' %>
-            <% end %>
+          <%= link_to favorites_path(topic_id: @topic.id), method: :delete, remote: true do %>
+          <%= image_tag 'heart001.png', class: 'topic-index-icon2' %>
+          <% end %>
           <% else %>
-            <%= link_to favorites_path(topic_id: @topic.id), method: :post, remote: true do %>
-              <%= image_tag 'heart-black.png', class: 'topic-index-icon2' %>
-            <% end %>
+          <%= link_to favorites_path(topic_id: @topic.id), method: :post, remote: true do %>
+          <%= image_tag 'heart-black.png', class: 'topic-index-icon2' %>
+          <% end %>
           <% end %>
         </div>
         <div class="topic-show-title">
@@ -37,8 +39,10 @@
         <hr color="silver">
         <div class="topic-show-text">
           <div class="topic-show-text2">
-            <%= image_tag "presen1.png" %>What we’ll do</div>
-            &nbsp;&nbsp;<%= @topic.description %>
+            <%= image_tag "presen1.png" %>What we’ll do
+          </div>
+          &nbsp;&nbsp;
+          <%= @topic.description %>
         </div>
       </div>
     </div>
@@ -61,21 +65,32 @@
         <div class="balloon5">
           <div class="faceicon">
             <% if comment.user.image? %>
-              <%= link_to user_path(comment.user.id) do %>
-                <%= image_tag comment.user.image.url, class: "tweet-icon" %>
-              <% end %>
+            <%= link_to user_path(comment.user.id) do %>
+            <%= image_tag comment.user.image.url, class: "tweet-icon" %>
+            <% end %>
             <% else %>
-              <%= link_to user_path(comment.user.id) do %>
-                <%= image_tag "no-image.png", class: "tweet-icon" %>
-              <% end %>
+            <%= link_to user_path(comment.user.id) do %>
+            <%= image_tag "no-image.png", class: "tweet-icon" %>
+            <% end %>
             <% end %>
           </div>
           <div class="comment-users">
             <%= link_to(comment.user.name, user_path(comment.user.id)) %>
+
           </div>
           <div class="chatting">
             <div class="says">
               <%= comment.content %>
+              <div class="topic-show-box">
+                <% if comment.image.present? %>
+                <%= link_to comment.image.url do %>
+                <%= image_tag comment.image.url %>
+                <% end %>
+                <% end %>
+                <% if comment.video.present? %>
+                <%= video_tag comment.video.url, controls: true %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>

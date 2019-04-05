@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_action :logged_in_user, only:[:edit, :update, :delete]
+  before_action :correct_user, only:[:edit, :update, :delete]
   def index
     @topics = Topic.all
   end
@@ -45,5 +47,18 @@ class TopicsController < ApplicationController
   private
   def topic_params
     params.require(:topic).permit(:image, :video, :description, :category, :title)
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "please log in."
+      redirect_to login_path
+    end
+  end
+
+
+  def correct_user
+    @topic = Topic.find_by(id:params[:id])
+    redirect_to(root_path) unless @topic == current_user
   end
 end

@@ -5,6 +5,14 @@
         <h1 class="topic-h1">Add Comment</h1>
         <%= form_with model: [@topic, @comment], url: {action: "create"} do |f| %>
         <div class="form-group">
+          <%= f.label :image %>
+          <%= f.file_field :image%>
+        </div>
+        <div class="form-group">
+          <%= f.label :video %>
+          <%= f.file_field :video, :accept => 'video/*' %>
+        </div>
+        <div class="form-group">
           <%= f.label :comment %>
           <%= f.text_area :content, class: 'form-control' %>
         </div>
