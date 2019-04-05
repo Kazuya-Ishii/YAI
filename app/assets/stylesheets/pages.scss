@@ -73,7 +73,7 @@ h1,h3 {
   display:grid;
   grid-template-columns: 50vw 50vw;
   grid-template-rows: 60vh 60vh;
-  background-color: #C2EEFF;
+  background-color: #A4C6FF	;
 }
 .pages-middle-up-right{
     grid-row: 1 / 2;
@@ -92,31 +92,49 @@ h1,h3 {
 .pages-middle-up{
   grid-row: 1 / 2;
   grid-column: 1 / 2;
+  text-align: left;
+  margin: auto;
+  padding-left: 50px;
+  margin-right:50px;
   h1{
-    font-size: 30px;
-    color: #FFF;
-    text-shadow: 2px 2px 1px #0FF,
-    -2px 2px 1px #0FF,
-    2px -2px 1px #0FF,
-    -2px -2px 1px #0FF;
-    font-weight: 400;
+    padding-bottom: 20px;
+    font-size: 25px;
+    color: #fff;
     font-family: Verdana;
     font-style: oblique;
+    text-shadow: 3px 3px 1px #999999;
+  }
+  h2{
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 200;
+    font-family: Verdana;
+    font-style: oblique;
+    text-shadow: 1px 1px 1px #999999;
   }
 }
 .pages-middle-down{
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+  text-align: left;
+  margin: auto;
+  margin-left: 50px;
+  margin-right:50px;
   h1{
-    font-size: 30px;
-    color: #FFF;
-    text-shadow: 2px 2px 1px #0FF,
-    -2px 2px 1px #0FF,
-    2px -2px 1px #0FF,
-    -2px -2px 1px #0FF;
-    font-weight: 400;
+    padding-bottom: 20px;
+    font-size: 25px;
+    color: #fff;
     font-family: Verdana;
     font-style: oblique;
+    text-shadow: 3px 3px 1px #999999;
+  }
+  h2{
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 200;
+    font-family: Verdana;
+    font-style: oblique;
+    text-shadow: 1px 1px 1px #999999;
   }
 }
 

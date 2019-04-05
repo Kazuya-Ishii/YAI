@@ -33,6 +33,12 @@
         <%= @user .remarks %>
       </div>
     </h1>
+    <div class="user-newposts">
+      <%= link_to new_topic_path do %>
+        <%= image_tag '羽.png', class: 'user-newpost' %>
+          <p>↑↑(Click here to post)</p>
+      <% end %>
+    </div>
 
     <div class="topic-index-wrapper">
       <div class="container">
