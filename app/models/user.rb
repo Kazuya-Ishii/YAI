@@ -7,7 +7,8 @@ class User < ApplicationRecord
  has_many :favorite_topics, through: :favorites, source: 'topic'
 
   has_secure_password
-  validates :password, presence: true,length: { minimum: 8 },format: { with: /([0-9].＊[a-zA-Z]|[a-zA-Z].＊[0-9])/ }, allow_nil:true
+  validates :password, presence: true, length: { minimum:8 },
+ format: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, allow_nil:true
 
   has_many :topics,dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",

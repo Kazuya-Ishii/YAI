@@ -30,10 +30,13 @@ class TopicsController < ApplicationController
   end
 
   def update
-    @topic = Topic.find_by(id:params[:id])
-    @topic.description = params[:description]
-    @topic.save
-    redirect_to topics_path
+    @topic = Topic.find(params[:id])
+    if @topic.update_attributes(topic_params)
+      flash[:success] = "Topic updated"
+      redirect_to topic_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -59,6 +62,6 @@ class TopicsController < ApplicationController
 
   def correct_user
     @topic = Topic.find_by(id:params[:id])
-    redirect_to(root_path) unless @topic == current_user
+    redirect_to(root_path) unless @topic.user_id == current_user.id
   end
 end

@@ -38,7 +38,7 @@
               (<%= topic.category %>)</span>
           </h2>
           <div class="topic-index-title">
-            <%= topic.title %>
+            <%= topic.title.truncate(20) %>
           </div>
           <p class="topic-text">
             <%= topic.description.truncate(40) %>

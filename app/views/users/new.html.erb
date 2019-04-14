@@ -6,39 +6,52 @@
         <%= form_for @user do |f| %>
         <div class="form-group">
           <%= f.label :name, class: 'text-white' %>
-          <%= f.text_field :name, class: 'form-control' %>
+          <%= f.text_field :name, class: 'form-control' ,required: true%>
         </div>
         <div class="form-group">
           <%= f.label :email, class: 'text-white' %>
-          <%= f.text_field :email, class: 'form-control' %>
+          <%= f.text_field :email, id: 'mail' , class: 'form-control',required: true, autofocus: 'true' %>
         </div>
         <div class="form-group">
           <%= f.label :password, class: 'text-white' %>
-          <%= f.password_field :password, class: 'form-control' %>
-          <p>(Please input using half-width English numbers and letters, using more than 8.)</p>
+          <%= f.password_field :password, class: 'form-control',required: true %>
+        <p>  (Please input using half-width English numbers and letters, using more than 8.)</p>
         </div>
         <div class="form-group">
           <%= f.label :password_confirmation, class: 'text-white' %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
+          <%= f.password_field :password_confirmation, class: 'form-control',required: true %>
         </div>
         <div class="form-group">
           <%= f.label :birthday, class: 'text-white' %>
           <%= raw sprintf( f.date_select( :birthday, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year), default: Date.new(1989, 1, 1), date_separator: '%s'), '/ ', '/ ') %>
         </div>
         <div class="formradio-group">
-          <label><%= f.radio_button :gender, "male" %>male</label>
+          <label><%= f.radio_button :gender, "male" ,required: true%>male</label>
           <label><%= f.radio_button :gender, "female" %>female</label>
         </div>
 
         <div class="form-group">
           <%= f.label :bio, class: 'text-white' %>
-          <%= f.text_area :remarks, class: 'form-control' %>
+          <%= f.text_area :remarks, class: 'form-control',required: true %>
         </div>
 
         <%= f.submit "Register Now", class: 'btn-white' %>
       <% end %>
       <%= link_to 'Click here to sign in!', login_path ,class: 'text-white' %>
 
+
+      <script>
+        var email = document.getElementById("mail");
+
+        email.addEventListener("f.text_field", function (event) {
+          if (email.validity.typeMismatch) {
+            email.setCustomValidity("I expect an e-mail, darling!");
+          } else {
+            email.setCustomValidity("");
+          }
+        });
+
+      </script>
     </div>
   </div>
 </div>

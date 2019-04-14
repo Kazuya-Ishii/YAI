@@ -39,7 +39,7 @@
         <hr color="silver">
         <div class="topic-show-text">
           <div class="topic-show-text2">
-            <%= image_tag "presen1.png" %>What we’ll do
+            <%= image_tag "presen1.png" %>Questions
           </div>
           &nbsp;&nbsp;
           <%= @topic.description %>
@@ -55,9 +55,9 @@
       <div class="col-md-5 topic-show-left2">
         <div class="topic-show-review">
           <%= image_tag 'コメント2.png' %>
-          <span class="topic-show-comment">Comments</span>
+          <span class="topic-show-comment">Answers</span>
         </div>
-        <%= link_to 'Add Comments', new_topic_comment_path(topic_id: @topic.id) , class: 'btn-flat-border' %>
+        <%= link_to 'Add Answers', new_topic_comment_path(topic_id: @topic.id) , class: 'btn-flat-border' %>
       </div>
 
       <div class="col-md-7 topic-show-right2">

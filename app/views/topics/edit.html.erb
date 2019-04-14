@@ -1,12 +1,35 @@
-<div class="topic-new-wrapper" >
+<div class="topic-new-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
 
-        <h1 class="text-center">Edit Picture</h1>
-        <%= form_for("/topic/#{@topic.id}/update") do %>
+        <h1 class="topic-h1">Edit Topic</h1>
+        <%= form_for @topic do |f| %>
 
+        <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
+        <div class="form-group">
+          <%= f.label :image %>
+          <%= f.file_field :image%>
+        </div>
 
+        <div class="form-group">
+          <%= f.label :video %>
+          <%= f.file_field :video, :accept => 'video/*' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :category %>
+          <%= f.select :category, [["humanities","humanities"],["social science","social science"],
+          ["natural science","natural science"],["synthetic science","synthetic science"],["applied science","applied science"],["others","others"]] ,class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :description %>
+          <%= f.text_area :description, class: 'form-control' %>
+        </div>
 
         <input type="submit" value="Update" class='btn-white'>
         <% end %>
