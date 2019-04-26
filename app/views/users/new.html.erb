@@ -38,20 +38,6 @@
         <%= f.submit "Register Now", class: 'btn-white' %>
       <% end %>
       <%= link_to 'Click here to sign in!', login_path ,class: 'text-white' %>
-
-
-      <script>
-        var email = document.getElementById("mail");
-
-        email.addEventListener("f.text_field", function (event) {
-          if (email.validity.typeMismatch) {
-            email.setCustomValidity("I expect an e-mail, darling!");
-          } else {
-            email.setCustomValidity("");
-          }
-        });
-
-      </script>
     </div>
   </div>
 </div>

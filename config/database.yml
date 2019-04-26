@@ -48,7 +48,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: YAI_production
-  username: YAI
-  password: <%= ENV['YAI_DATABASE_PASSWORD'] %>
+<<: *default
+adapter: postgresql
+encoding: unicode
+pool: 5
+database: YAI_production
